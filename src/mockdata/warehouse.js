@@ -1,6 +1,6 @@
 
-exports.warehouses = {
-    pune : {
+export const warehouses = {
+    Pune : {
         employeeCapacity: 1000,
         productDispatchDailyCapacity: 10000,
         productPackedDailyCapacity: 10000,
@@ -19,7 +19,7 @@ exports.warehouses = {
         productPendingPresent: 1000,
         supplyChainWorking: 3
     },
-    mumbai : {
+    Mumbai : {
         employeeCapacity: 10000,
         productDispatchDailyCapacity: 50000,
         productPackedDailyCapacity: 50000,
@@ -38,7 +38,7 @@ exports.warehouses = {
         productPendingPresent: 5000,
         supplyChainWorking: 17
     },
-    delhi : {
+    Delhi : {
         employeeCapacity: 5000,
         productDispatchDailyCapacity: 20000,
         productPackedDailyCapacity: 20000,
@@ -57,7 +57,7 @@ exports.warehouses = {
         productPendingPresent: 1000,
         supplyChainWorking: 13
     },
-    banglore : {
+    Banglore : {
         employeeCapacity: 1500,
         productDispatchDailyCapacity: 7000,
         productPackedDailyCapacity: 5000,
@@ -75,5 +75,5 @@ exports.warehouses = {
         stockPresent: 370000,
         productPendingPresent: 400,
         supplyChainWorking: 7
-    },
+    }
 }

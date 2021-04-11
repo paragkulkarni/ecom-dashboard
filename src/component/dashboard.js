@@ -15,8 +15,8 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import LocationCityIcon from '@material-ui/icons/LocationCity';
+import {warehouses} from '../mockdata/warehouse';
 
 const drawerWidth = 240;
 
@@ -53,6 +53,10 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     width: drawerWidth,
   },
+  menuHeader:{
+    justifyContent: 'flex-start'
+  },
+
   drawerHeader: {
     display: 'flex',
     alignItems: 'center',
@@ -77,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.enteringScreen,
     }),
     marginLeft: 0,
-  },
+  }
 }));
 
 export default function EcomerceDashboard() {
@@ -113,7 +117,7 @@ export default function EcomerceDashboard() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Persistent drawer
+            Home
           </Typography>
         </Toolbar>
       </AppBar>
@@ -126,25 +130,20 @@ export default function EcomerceDashboard() {
           paper: classes.drawerPaper,
         }}
       >
+        
         <div className={classes.drawerHeader}>
+          <Typography variant="h6" className={classes.menuHeader}>
+            Menu
+          </Typography> 
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </div>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+          {Object.keys(warehouses).map((text, index) => (
             <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemIcon><LocationCityIcon /></ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           ))}
